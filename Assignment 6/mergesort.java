@@ -1,5 +1,8 @@
 public class mergesort {
-
+    //Hunter Browning-Smith
+    //Assignment 6
+    //IT2660
+    
     public static void main(String[] args) {
         int length = 100; //want to sort an array of 100 values
         int[] actual = new int[length];
