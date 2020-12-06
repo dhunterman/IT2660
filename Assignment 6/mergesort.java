@@ -2,7 +2,7 @@ public class mergesort {
     //Hunter Browning-Smith
     //Assignment 6
     //IT2660
-    
+
     public static void main(String[] args) {
         int length = 100; //want to sort an array of 100 values
         int[] actual = new int[length];
@@ -44,6 +44,7 @@ public class mergesort {
 
         }
 
+        //recursive methods execute until "l" and "r" array lengths are less than 2
         mergeSort(l, mid);
         mergeSort(r, n - mid);
         merge(actual, l, r, mid, n-mid);
@@ -51,16 +52,19 @@ public class mergesort {
     }
 
     public static void merge(int[] actual, int[] l, int[] r, int left, int right) {
-        int i = 0, j = 0, k = 0;
+        int i = 0; //i is the position placeholder integer of left "l" array (i = 0 is position 0)
+        int j = 0; //j is the position placeholder integer of right "r" array (j = 0 is position 0)
+        int k = 0; //k is the position placeholder integer of whole "actual" array (k = 0 is position 0)
         while (i < left && j < right) {
-            if (l[i] <= r[j]) {
+            if (l[i] <= r[j]) { //Assign the smaller value of the two "l" (left) and "r" (right) arrays to the "actual" array
                 actual[k++] = l[i++];
-
             } else {
                 actual[k++] = r[j++];
-
             }
         }
+        
+        //Assign the smaller value of the two "l" (left) and "r" (right) arrays to the "actual" array
+            
         while (i < left) {
             actual[k++] = l[i++];
         }
